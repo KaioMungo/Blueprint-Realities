@@ -3,12 +3,6 @@ async function loginUser(){
     const senha = document.getElementById('senha').value
 
 
-    if (!email || !senha){
-        alert("All the filds need to be filled.");
-        return;
-    }
-
-
     let api = await fetch(url, {
         method:'POST',
         body:JSON.stringify({
