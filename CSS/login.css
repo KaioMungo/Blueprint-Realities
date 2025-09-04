@@ -1,0 +1,122 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Times New Roman', Times, serif;
+}
+
+html{
+    scroll-behavior: smooth; /*rolagem mais suave*/
+}
+
+body{
+     
+     background: linear-gradient(to bottom, rgb(208, 208, 242),  rgb(209, 209, 247));
+     min-height: 100vh;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+}
+
+
+.login_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 75%;
+    height: 75vh;
+    margin: 0 auto;
+    background-color: rgb(248, 244, 244); 
+    border-radius: 16px;
+    padding: 20px;
+    border: transparent 2px solid; 
+    box-shadow: rgb(209, 209, 247); 
+    margin-bottom: 40px;
+}
+
+.imagem_before_after{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img_before_after{
+    width:700px;
+    height: 65vh;
+    padding-right: 100px;
+    border-radius: 16px;
+}
+
+.form_before_after{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px
+}
+
+.form_before_after label{
+    align-self: flex-start; /*Alinha o label à esquerda*/
+    font-size: 1rem;
+    font-weight: 200;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.form_before_after input{
+    width: 310px;
+    height: 40px;
+    padding: 0 15px;
+    background-color: rgba(213, 202, 202, 0.3); 
+    border: 1px solid transparent;
+    border-radius: 8px;
+    color: rgb(0, 0, 0);
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+    outline: none;
+}
+
+.form_before_after button{
+    color: white;
+    background-color: black;
+    cursor: pointer;
+    border: none;
+    width: 170px;
+    max-width: 250px;
+    height: 35px;
+    max-height: 45px;
+    border-radius: 16px;
+    font-size: 17px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight:700;
+    transition: all 0.5s ease;
+    text-decoration: none;
+    margin-top: 12px;
+}
+
+.form_before_after button:hover{
+    border: solid whitesmoke 2px;
+    transform: translateY(-4px);
+    box-shadow: rgba(108, 107, 139, 0.3);
+}
+
+.imagem_usuario{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+    padding-bottom: 10px;
+}
+
+.botao_cadastro{
+    margin-top: 2px; 
+    text-decoration: none;
+    color: black; 
+    font-size: 0.9rem; 
+    transition: all 0.3s ease;
+}
+
+.botao_cadastro:hover{
+    transform: translateY(-1px);
+}
