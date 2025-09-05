@@ -10,10 +10,10 @@ async function logoutUser() {
     })
 
     if(api.ok) {
-        alert('Logout realizado com sucesso')
+        alert('Logout successful')
         localStorage.removeItem('user')
         window.location.reload()
         return
     }
-    alert('Não foi possível realizar o logout')
+    alert('Unable to logout')
 }

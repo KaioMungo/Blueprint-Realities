@@ -43,7 +43,8 @@ body{
 .menu{
     display: flex;
     list-style: none;
-    gap: 3rem;
+    gap: 1rem;
+    padding-right: 23px;
 }
 
 .menu_link{
@@ -340,6 +341,29 @@ footer{
 .redes_sociais img:hover{
     transform: translateY(-4px)
     
+}
+
+.botao_logout{
+    color: white;
+    background-color: black;
+    cursor: pointer;
+    border: none;
+    width: 70px;
+    max-width: 100px;
+    height: 30px;
+    max-height: 30px;
+    border-radius: 16px;
+    font-size: 17px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight:700;
+    transition: all 0.5s ease;
+    text-decoration: none;
+}
+
+.botao_logout:hover{
+    border: solid whitesmoke 2px;
+    transform: translateY(-4px);
+    box-shadow: rgba(108, 107, 139, 0.3);
 }
 
 
