@@ -76,7 +76,7 @@ body{
     outline: none;
 }
 
-.botao_login{
+input[type=button]{
     color: white;
     background-color: black;
     cursor: pointer;
@@ -94,7 +94,7 @@ body{
     margin-top: 12px;
 }
 
-.botao_login:hover{
+input[type=button]:hover{
     border: solid whitesmoke 2px;
     transform: translateY(-4px);
     box-shadow: rgba(108, 107, 139, 0.3);

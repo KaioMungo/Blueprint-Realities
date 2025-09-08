@@ -2,13 +2,13 @@ async function loginUser(){
     const email = document.getElementById('email').value
     const senha = document.getElementById('senha').value
 
+    const URL = 'http://localhost:5000/login'
 
-    let api = await fetch(url, {
+    let api = await fetch(URL, {
         method:'POST',
         body:JSON.stringify({
             "email": email,
-            "password": senha,
-            
+            "password": senha
         }),
         headers:{
             'Content-Type':'application/json',
@@ -25,8 +25,8 @@ async function loginUser(){
 
     let responseError = await api.json()
     
-    if(responseError.data.error){
-        alert(responseError.data.error)
+    if(responseError.error){
+        alert(responseError.error)
     }
 
 }

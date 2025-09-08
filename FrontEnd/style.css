@@ -358,6 +358,7 @@ footer{
     font-weight:700;
     transition: all 0.5s ease;
     text-decoration: none;
+    display: none;
 }
 
 .botao_logout:hover{
@@ -365,12 +366,3 @@ footer{
     transform: translateY(-4px);
     box-shadow: rgba(108, 107, 139, 0.3);
 }
-
-
-
-
-
-
-
-
-
