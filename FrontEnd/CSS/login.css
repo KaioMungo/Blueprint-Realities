@@ -76,7 +76,7 @@ body{
     outline: none;
 }
 
-.form_before_after button{
+.botao_login{
     color: white;
     background-color: black;
     cursor: pointer;
@@ -94,7 +94,7 @@ body{
     margin-top: 12px;
 }
 
-.form_before_after button:hover{
+.botao_login:hover{
     border: solid whitesmoke 2px;
     transform: translateY(-4px);
     box-shadow: rgba(108, 107, 139, 0.3);

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="../CSS/sign_up.css" />
+    <script src="../JS/sign_up.js"></script>
+    <title>Sign-Up Page</title>
+  </head>
+  <body>
+    <div class="sign_up_container">
+      <div class="imagem_before_after">
+        <img
+          class="img_before_after"
+          src="../img/casa_before.png"
+          alt="imagem antes e depois"
+        />
+        <div>
+          <form class="form_before_after">
+            <h1>SIGN UP</h1>
+            <label for="nome">Full Name</label>
+            <input
+              type="text"
+              id="nome"
+              name="nome"
+              placeholder="Your name"
+              required
+            />
+            <label for="email">Mail</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Your email"
+              required
+            />
+            <label for="senha">Password</label>
+            <input
+              type="password"
+              id="senha"
+              name="senha"
+              placeholder="Your password"
+              required
+            />
+            <label for="senha">Confirm Password</label>
+            <input
+              type="password"
+              id="confirma_senha"
+              name="confirma_senha"
+              placeholder="Confirm password"
+              required
+            />
+
+            <label>Terms</label>
+            <input type="checkbox" id="termos" name="termos" />
+            <button type="submit" class="botao_sign_up">Sign Up</button>
+            <a href="../HTML/login.html" class="botao_login"
+              >Already have an account?<strong> Login.</strong></a
+            >
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

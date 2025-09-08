@@ -19,7 +19,7 @@ body{
 }
 
 
-.sing_in_container{
+.sign_up_container{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -76,7 +76,7 @@ body{
     outline: none;
 }
 
-.form_before_after button{
+.botao_sign_up{
     color: white;
     background-color: black;
     cursor: pointer;
@@ -94,7 +94,7 @@ body{
     
 }
 
-.form_before_after button:hover{
+.botao_sign_up:hover{
     border: solid whitesmoke 2px;
     transform: translateY(-4px);
     box-shadow: rgba(108, 107, 139, 0.3);
