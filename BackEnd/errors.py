@@ -1,0 +1,24 @@
+<<<<<<< HEAD
+class ErrorPassword(Exception):
+    def __init__(self, message):
+        self.message = message
+
+class EmptyStringError(Exception):
+    def __init__(self, message):
+        self.message = message
+
+class AuthError(Exception):
+    def __init__(self, message):
+=======
+class ErrorPassword(Exception):
+    def __init__(self, message):
+        self.message = message
+
+class EmptyStringError(Exception):
+    def __init__(self, message):
+        self.message = message
+
+class AuthError(Exception):
+    def __init__(self, message):
+>>>>>>> 5d04b3d (feat: addition new functionality prompt)
+        self.message = message

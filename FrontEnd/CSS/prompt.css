@@ -1,0 +1,173 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Times New Roman', Times, serif;
+}
+
+html{
+    scroll-behavior: smooth; /*rolagem mais suave*/
+}
+
+body{
+     
+     /* O background agora será o vídeo, então removemos o gradiente */
+     min-height: 100vh;
+     display: flex;
+     flex-direction: column; /* Alinha os itens verticalmente */
+     justify-content: center;
+     align-items: center;
+     background-color: #b0bfc0;
+}
+
+
+.container_formulario{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: solid black 1px;
+    width: 33%;
+    height: 75vh;
+    border-radius: 16px;
+    /*Para uma sombra à esquerda, um valor negativo no deslocamento X.*/
+    /*box-shadow: [offset-x] [offset-y] [blur-radius] [spread-radius] [color];*/
+    box-shadow: -15px 0px 20px 0px rgba(0, 0, 0, 0.25);
+    background-color: antiquewhite;
+}
+.formulario{
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px; 
+    width: 100%;
+    padding: 40px;
+}
+
+.formulario h2{
+    margin-bottom: 50px; 
+    text-align: center;
+
+}
+
+.input_grid {
+    display: grid;
+    /*cria duas colunas de tamanho igual*/
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    width: 100%;
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+}
+
+.form_group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding-bottom: 17px;
+}
+
+.form_group label {
+    font-size: 1rem;
+    font-weight: 200;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.form_group input, .form_group select {
+    width: 100%; 
+    height: 40px;
+    padding: 0 15px;
+    background-color: rgba(213, 202, 202, 0.3);
+    border: 1px solid transparent;
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+}
+
+/*deixa o texto do placeholder do select cinza*/
+.form_group select:invalid {
+    color: #666;
+}
+
+
+.botao_gerar {
+    color: white;
+    background-color: black;
+    cursor: pointer;
+    border: none;
+    width: 170px;
+    height: 35px;
+    border-radius: 16px;
+    font-size: 17px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight:700;
+    transition: all 0.5s ease;
+    margin-top: 15px; /*adiciona espaço acima do botão*/
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.botao_gerar:hover {
+    border: solid whitesmoke 2px;
+    transform: translateY(-2px)
+}
+
+/* Estilos para o container da logo */
+.logo_container {
+    display: flex;
+    align-items: center;
+    margin-top: 15px; 
+}
+
+.logo_container img {
+    width: 25px;
+    height: 25px;
+    margin-right: 5px; 
+}
+
+.logo_container h3 {
+    font-size: 18px;
+    font-weight: 500;
+    font-family:'Courier New', Courier, monospace
+}
+
+/* Estilos para o botão de upload moderno */
+.form_group_upload {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+
+.form_group_upload input[type="file"] {
+    display: none;
+}
+
+
+.file_upload_label {
+    border: 2px dashed #a9a9a9;
+    border-radius: 8px;
+    padding: 30px;
+    width: 100%;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #666;
+    background-color: #f9f9f9;
+}
+
+.file_upload_label:hover {
+    border-color: #333;
+    background-color: #f0f0f0;
+}
+
+#file-name {
+    font-size: 0.9rem;
+    color: #555;
+}
