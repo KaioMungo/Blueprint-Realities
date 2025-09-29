@@ -23,7 +23,7 @@ def gerar_imagem():
         )
         
         prompt_data = prompt.gerar_prompt()
-        print('prompt gerado', prompt_data)
+        print(f'Prompt gerado: \n\n{prompt_data}')
         
         #Caminho absoluto para a imagem padrão
         default_image_path = os.path.join(
@@ -33,8 +33,6 @@ def gerar_imagem():
             'imagem_depois.png'
         )
         default_image_path = os.path.abspath(default_image_path)
-        
-        print("Caminho da imagem:", default_image_path)  #para debug (teste)
         
         return send_file(
             default_image_path,

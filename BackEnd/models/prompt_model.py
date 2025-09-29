@@ -16,11 +16,11 @@ class Prompt:
         "O resultado final deve transmitir a atmosfera desejada, destacando o estilo e as cores escolhidas, e apresentar uma "
         "proposta de design realista e viável para reforma ou decoração completa do imóvel, mantendo a estrutura original do comodo "
         "alterando somente a decoração."
-)
+        )
 
         return prompt.format(
             METRAGEM=self.metragem,
             ORCAMENTO=self.orcamento,
             PALETA_DE_CORES=self.paleta_cores,
             ESTILO_DE_DESIGN=self.estilo
-    )
+        )

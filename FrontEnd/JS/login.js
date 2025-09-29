@@ -19,7 +19,7 @@ async function loginUser(){
         let response = await api.json()
         alert('Login realized')
         localStorage.setItem('user', JSON.stringify(response))
-        window.location.assign('../index.html')
+        window.location.assign('./prompt.html')
         return
     }
 

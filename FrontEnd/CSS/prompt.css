@@ -171,3 +171,12 @@ body{
     font-size: 0.9rem;
     color: #555;
 }
+
+#resultado_imagem {
+    width: 33%;
+}
+
+#resultado_imagem img {
+    border-radius: 5px;
+    width: 100%;
+}
