@@ -8,7 +8,14 @@ CORS(app)
 app.config['HOST'] = '0.0.0.0'
 app.config['PORT'] = 5000
 app.config['DEBUG'] = True
-app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///app.db"
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
+username = 'root'
+password = 'Dg$8rT!2mQ#5xL9w'
+hostname = 'localhost'
+database = 'blueprint'
+
+
+app.config['SQLALCHEMY_DATABASE_URI'] = (
+    f"mysql+pymysql://{username}:{password}@{hostname}/{database}"
+)
 db = SQLAlchemy(app)

@@ -1,4 +1,4 @@
-from flask import Blueprint, jsonify, request
+from flask import Blueprint, jsonify, request, jsonify
 from errors import EmptyStringError, ErrorPassword, AuthError
 from models.user_model import register, login
 

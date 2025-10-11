@@ -9,6 +9,7 @@ app.register_blueprint(prompt_blueprint)
 
 with app.app_context():
     db.create_all()
+    print("✅ Tabelas verificadas/criadas com sucesso no MySQL.")
 
 if __name__ == '__main__':
     app.run(

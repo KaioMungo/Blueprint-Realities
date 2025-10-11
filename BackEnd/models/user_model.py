@@ -15,42 +15,42 @@ class User(db.Model):
         self.password = password
 
 def register(data):
-    if 'full_name' and 'email' and 'password' and 'confirm_password' not in data:
-        raise KeyError
-    
-    if data['full_name'] == "" or data['email'] == "" or data['password'] == "" or data['confirm_password'] == "":
-        raise EmptyStringError('All fields must be filled out')
-    
-    user = User.query.filter_by(email=data['email']).first()
+    required_fields = ['full_name', 'email', 'password', 'confirm_password']
 
-    if user:
+    if not all(field in data for field in required_fields):
+        raise KeyError("Missing required registration fields.")
+    
+
+    if any(data[field].strip() == "" for field in required_fields):
+        raise EmptyStringError('All fields must be filled out.')
+    
+    existing_user = User.query.filter_by(email=data['email']).first()
+
+    if existing_user:
         raise AuthError('Email already registered.')
     
     if data['confirm_password'] != data['password']:
         raise ErrorPassword('Please make sure both password fields match.')
     
-    user = User(
+    new_user = User(
         full_name=data['full_name'],
         email=data['email'],
         password=data['password']
     )
 
-    db.session.add(user)
+    db.session.add(new_user)
     db.session.commit()
     
 def login(data):
-    if 'email' and 'password' not in data:
-        raise KeyError
+    required_fields = ['email', 'password']
+    if not all(field in data for field in required_fields):
+        raise KeyError("Missing login fields.")
     
-    if data['email'] == "" or data['password'] == "":
-        raise EmptyStringError('All fields must be filled out')
+    if any(data[field].strip() == "" for field in required_fields):
+        raise EmptyStringError('All fields must be filled out.')
     
     user = User.query.filter_by(email=data['email']).first()
-
-    if not user:
-        raise AuthError('Email or password are incorrect')
-    
-    if user.password != data['password']:
-        raise AuthError('Email or password are incorrect')
+    if not user or user.password != data['password']:
+        raise AuthError('Email or password are incorrect.')
 
     return 'Authentication Success'

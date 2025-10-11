@@ -5,7 +5,7 @@ async function registerUser(){
     const termos = document.getElementById("termos").checked;
     const confirm_password = document.getElementById("confirma_senha").value
 
-    const URL = "http://localhost:5000/register"
+    const URL = "http://127.0.0.1:5000/register";
 
     if (!email.includes('@') || !email.includes('.')){
         alert("Invalid email format.");
@@ -19,30 +19,31 @@ async function registerUser(){
 
     localStorage.setItem('user', nome);
 
-    let api = await fetch(URL, {
-        method:'POST',
-        body:JSON.stringify({
-            "full_name": nome,
-            "email": email,
-            "password": senha,
-            "confirm_password": confirm_password
-        }),
-        headers:{
-            'Content-Type':'application/json'
+
+    try {
+        const response = await fetch(URL, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                full_name: nome,
+                email: email,
+                password: senha,
+                confirm_password: confirm_password
+            })
+        });
+
+        const data = await response.json();
+
+        if (response.ok) {
+            alert(data.message || 'Registration successful.');
+            window.location.assign('../HTML/login.html');
+        } else {
+            alert(data.error || 'An error occurred.');
         }
-    })
 
-    if(api.ok){
-        await api.json()
-        alert('Registration successful.')
-        window.location.assign('../HTML/login.html')
-        return
-    }
-
-    let responseError = await api.json()
-    
-    if(responseError.error){
-        alert(responseError.error)
+    } catch (err) {
+        console.error(err);
+        alert('Network or server error.');
     }
 }
 
