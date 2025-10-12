@@ -1,0 +1,142 @@
+body {
+    margin: 0;
+    background-color: #b0bfc0;
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    color: #495057;
+}
+
+.page_wrapper {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.page_header {
+    margin-bottom: 40px;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.page_header h1 {
+    color: #007BFF;
+    font-size: 2.5rem;
+    border-bottom: 3px solid #007BFF;
+    display: inline-block;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+}
+
+.cards_grid_container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+.default_card {
+    background-color: #FFFFFF;
+    border: 1px solid #E0E0E0;
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.default_card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); 
+}
+
+.card_title {
+    color: #007BFF; 
+    font-size: 1.3rem;
+    margin-top: 0;
+    margin-bottom: 15px;
+    border-bottom: 1px dashed #E0E0E0; 
+    padding-bottom: 10px;
+}
+
+.summary {
+    color: #6c757d;
+    font-style: italic;
+}
+
+.data_info {
+    font-size: 0.85rem;
+    color: #A0A0A0;
+    margin-top: 15px;
+}
+
+.card_actions {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #E0E0E0;
+}
+
+.btn {
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 500;
+    display: inline-block;
+    margin-right: 10px;
+    transition: background-color 0.2s;
+}
+
+.btn_edit {
+    background-color: #FFC107; 
+    color: #333;
+}
+
+.btn_delete {
+    background-color: #DC3545; 
+    color: white;
+}
+
+.btn_edit:hover {
+    background-color: #ffda6a;
+}
+
+.btn_delete:hover {
+    background-color: #ef4859;
+}
+
+.logo_container {
+    display: flex;
+    align-items: center;
+    margin-top: 15px; 
+    margin-left: 550px;
+}
+
+.logo_container img {
+    width: 25px;
+    height: 25px;
+    margin-right: 5px; 
+}
+
+.logo_container h3 {
+    font-size: 18px;
+    font-weight: 500;
+    font-family:'Courier New', Courier, monospace
+}
+
+header {
+    width: 100vw;
+    height: 100px;
+    background-color: #333;
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding-left: 50px;
+    gap: 15px;
+}
+
+.btn_header {
+    text-decoration: none;
+    color: #FFF;
+    font-size: 20px;
+}
+
+.btn_header:hover {
+    color: antiquewhite;
+    border-bottom: 1px solid antiquewhite;
+}

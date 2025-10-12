@@ -8,6 +8,8 @@
 <body>
     <header>
         <a href="../index.html" class="btn_header">Home Page</a>
+        <a href="./prompt.html" class="btn_header">Generate Image</a>
+        <a href="./historic_cards.html" class="btn_header">Saved Cards</a>
     </header>
     <div class="container_formulario">
         <form class="formulario" id="formulario">
@@ -47,7 +49,10 @@
                 <span id="file_name">Nenhum arquivo selecionado</span>
             </div>
 
-            <button type="submit" class="botao_gerar">Gerar Imagem</button>
+            <div class="button_container">
+                <button type="submit" class="botao_gerar">Gerar Imagem</button>
+                <button type="button" class="botao_salvar" onclick="saveInformations()">Salvar Informações</button>
+            </div>
 
         </form>
 

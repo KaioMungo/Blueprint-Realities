@@ -2,7 +2,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family:'Times New Roman', Times, serif;
 }
 
 html{
@@ -17,6 +16,7 @@ body{
      flex-direction: column; /* Alinha os itens verticalmente */
      align-items: center;
      background-color: #b0bfc0;
+     font-family: 'Segoe UI', Roboto, sans-serif;
 }
 
 
@@ -102,11 +102,6 @@ body{
     font-weight:700;
     transition: all 0.5s ease;
     margin-top: 15px; /*adiciona espaço acima do botão*/
-    display: flex;
-    margin: 0 auto;
-    justify-content: center;
-    align-items: center;
-    
 }
 
 .botao_gerar:hover {
@@ -189,6 +184,7 @@ header {
     justify-content: start;
     align-items: center;
     padding-left: 50px;
+    gap: 15px;
 }
 
 .btn_header {
@@ -197,17 +193,28 @@ header {
     font-size: 20px;
 }
 
-.btn_header::after{
-    content: "";
-    height: 2px;
-    width: 0;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    background: linear-gradient(90deg, #b0bfc0, #c2e5e8);
-    transition: 0.5s ease;
+.btn_header:hover {
+    color: antiquewhite;
+    border-bottom: 1px solid antiquewhite;
 }
 
-.btn_header:hover::after{
-    width: 100%;  
+.button_container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.botao_salvar {
+    color: white;
+    background-color: rgb(12, 91, 0);
+    cursor: pointer;
+    border: none;
+    width: 180px;
+    height: 35px;
+    border-radius: 16px;
+    font-size: 17px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight:700;
+    transition: all 0.5s ease;
+    margin-top: 15px; /*adiciona espaço acima do botão*/
 }

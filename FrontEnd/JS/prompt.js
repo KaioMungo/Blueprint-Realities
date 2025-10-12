@@ -71,3 +71,36 @@ async function uploadFile(event) {
         alert('Erro na requisição: ' + error.message);
     }
 }
+
+async function saveInformations() {
+    const budget = document.getElementById('orcamento').value
+    const color_palette = document.getElementById('paleta_cores').value
+    const footage = document.getElementById('metragem').value
+    const style = document.getElementById('estilo').value
+
+    const URL = 'http://localhost:5000/cards'
+
+    let api = await fetch(URL, {
+        method:'POST',
+        body:JSON.stringify({
+            "budget": budget,
+            "color_palette": color_palette,
+            "footage": footage,
+            "style": style
+        }),
+        headers:{
+            'Content-Type':'application/json',
+        }
+    })
+
+    if(api.ok) {
+        alert('Saved informations')
+        return
+    }
+
+    let responseError = await api.json()
+    
+    if(responseError.error){
+        alert(responseError.error)
+    }
+}
