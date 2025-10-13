@@ -1,8 +1,9 @@
+const url = 'http://localhost:5000/cards'
+
 async function getCards() {
-    const URL = 'http://localhost:5000/cards'
     const cardsContainer = document.getElementById('cards_grid_container')
 
-    let api = await fetch(URL, {
+    let api = await fetch(url, {
         method:'GET',
         headers:{
             'Content-Type':'application/json',
@@ -30,8 +31,7 @@ async function getCards() {
                     </div>
                     <p class="data_info">Criado em: 13/10/2025</p>
                     <div class="card_actions">
-                        <a href="../HTML/prompt.html" class="btn btn_edit">Editar</a>
-                        <a href="#" class="btn btn_delete">Excluir</a>
+                        <button class="btn btn_delete" onclick="deleteCard(${card.id})">Excluir</button>
                     </div>
                 </div>
             `
@@ -40,6 +40,24 @@ async function getCards() {
     }
 
     alert('Erro ao listar os cards')
+}
+
+async function deleteCard(id) {
+    const confirmDelete = confirm('Você quer mesmo deletar esse card?')
+
+    if (confirmDelete) {
+        const api = await fetch(`${url}/${id}`, {
+            method: "DELETE"
+        })
+
+        if (api.ok) {
+            alert('Card deletado')
+            window.location.reload()
+            return
+        }
+
+        alert('Erro ao deletar card')
+    }
 }
 
 getCards()
