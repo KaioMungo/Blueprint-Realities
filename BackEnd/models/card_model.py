@@ -1,5 +1,5 @@
 from config.database import db
-from errors import EmptyStringError
+from errors import EmptyStringError, IdNotExist
 
 class Card(db.Model):
     __tablename__ = "cards"
@@ -46,3 +46,12 @@ def createCard(data):
 def getCards():
     cards = Card.query.all()
     return [card.to_dict() for card in cards]
+
+def deleteCard(id):
+    card = Card.query.get(id)
+
+    if not card:
+        raise IdNotExist("O card que você quer deletar não foi encontrado.")
+    
+    db.session.delete(card)
+    db.session.commit()

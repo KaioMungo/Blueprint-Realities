@@ -1,6 +1,6 @@
 from flask import Blueprint, jsonify, request
-from errors import EmptyStringError
-from models.card_model import createCard, getCards
+from errors import EmptyStringError, IdNotExist
+from models.card_model import createCard, getCards, deleteCard
 
 card_blueprint = Blueprint('card', __name__)
 
@@ -18,3 +18,11 @@ def create_card():
 @card_blueprint.route('/cards', methods=['GET'])
 def get_cards():
     return jsonify(getCards())
+
+@card_blueprint.route("/cards/<int:id>", methods=['DELETE'])
+def delete_card(id):
+    try:
+        deleteCard(id)
+        return jsonify({'Success': True})
+    except IdNotExist as e:
+        return jsonify({'Error': str(e)}), 404
