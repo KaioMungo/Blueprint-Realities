@@ -25,21 +25,7 @@ def gerar_imagem():
         prompt_data = prompt.gerar_prompt()
         print(f'Prompt gerado: \n\n{prompt_data}')
         
-        #Caminho absoluto para a imagem padrão
-        default_image_path = os.path.join(
-            os.path.dirname(__file__),  #pasta onde está este arquivo Python
-            '..',                       #entra no BackEnd
-            'images',
-            'imagem_depois.png'
-        )
-        default_image_path = os.path.abspath(default_image_path)
-        
-        return send_file(
-            default_image_path,
-            mimetype='image/png',
-            as_attachment=True,
-            download_name='imagem_simulada.png'
-        )
+        return jsonify({'imageURL': 'https://i.imgur.com/iDYOFSH.png'})
         
     except EmptyStringError as e:
         return jsonify({'error': str(e)}), 400
