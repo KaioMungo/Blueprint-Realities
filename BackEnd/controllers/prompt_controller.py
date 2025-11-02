@@ -25,7 +25,16 @@ def gerar_imagem():
         prompt_data = prompt.gerar_prompt()
         print(f'Prompt gerado: \n\n{prompt_data}')
         
-        return jsonify({'imageURL': 'https://i.imgur.com/iDYOFSH.png'})
+        if data.get('estilo') == 'moderno':
+            return jsonify({'imageURL': 'https://i.imgur.com/kE6Izsv.png'})
+        elif data.get('estilo') == 'rustico':
+            return jsonify({'imageURL': 'https://i.imgur.com/JSSduNA.png'})
+        elif data.get('estilo') == 'minimalista':
+            return jsonify({'imageURL': 'https://i.imgur.com/96uqyUD.png'})
+        elif data.get('estilo') == 'industrial':
+            return jsonify({'imageURL': 'https://i.imgur.com/6wJjDCr.png'})
+        else:
+            return jsonify({'imageURL': 'https://i.imgur.com/lBqNlyi.jpeg'})
         
     except EmptyStringError as e:
         return jsonify({'error': str(e)}), 400

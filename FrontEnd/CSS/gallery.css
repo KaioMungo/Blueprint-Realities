@@ -10,7 +10,7 @@ html{
 }
 
 body{
-    background-color: rgb(209, 209, 247);
+    background-color: #b0bfc0;
 }
 
 header {
@@ -48,6 +48,7 @@ header {
     font-weight: 600;
     font-size: 30px;
     margin-bottom: 20px;
+    color: #333;
 }
 
 
@@ -89,7 +90,7 @@ header {
 
 .cards_grid_container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
     gap: 30px;
     padding-left: 100px;
     padding-top: 30px;
