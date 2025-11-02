@@ -103,4 +103,11 @@ header {
     height: 250px;
     padding-bottom: 10px;
     background-color: rgb(160, 125, 194);
+    border-radius: 5px;
+}
+
+.image_IA img {
+    width: 250px;
+    height: 260px;
+    border-radius: 5px;
 }

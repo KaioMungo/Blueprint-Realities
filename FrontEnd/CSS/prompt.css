@@ -166,8 +166,16 @@ body{
     color: #555;
 }
 
-#resultado_imagem {
+#container_resultado {
+    margin-top: 10px;
     width: 33%;
+}
+
+#resultado_imagem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
 }
 
 #resultado_imagem img {
@@ -217,4 +225,8 @@ header {
     font-weight:700;
     transition: all 0.5s ease;
     margin-top: 15px; /*adiciona espaço acima do botão*/
+}
+
+.hidden {
+    display: none;
 }

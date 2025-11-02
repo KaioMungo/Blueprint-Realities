@@ -44,25 +44,24 @@ async function uploadFile(event) {
             alert('Erro: ' + (errorData.error || 'Erro desconhecido'));
             return;
         }
-
-        const blob = await response.blob();
-        // CORREÇÃO: Chama o método createObjectURL no objeto global URL
-        const imageUrl = URL.createObjectURL(blob); 
-
-        // --- Início da Lógica de Exibição (Otimizada) ---
         
         // Remove a necessidade da lógica duplicada no final da função
-        const container = document.getElementById('resultado_imagem');
+        const container = document.getElementById('container_resultado')
+        const resultado = document.getElementById('resultado_imagem');
         let imgResult = document.getElementById('imgResult');
+
+        container.classList.remove('hidden')
         
         if (!imgResult) {
             imgResult = document.createElement('img');
             imgResult.id = 'imgResult';
             // Se você quer que a imagem apareça no container 'resultado_imagem'
-            container.appendChild(imgResult);
+            resultado.appendChild(imgResult);
         }
 
-        imgResult.src = imageUrl;
+        const responseJSON = await response.json()
+
+        imgResult.src = responseJSON.imageURL;
         imgResult.alt = 'Imagem gerada';
         
         // --- Fim da Lógica de Exibição ---
@@ -95,6 +94,35 @@ async function saveInformations() {
 
     if(api.ok) {
         alert('Saved informations')
+        return
+    }
+
+    let responseError = await api.json()
+    
+    if(responseError.error){
+        alert(responseError.error)
+    }
+}
+
+async function saveImage() {
+    const style = document.getElementById('estilo').value
+    const imgResult = document.getElementById('imgResult').src;
+
+    const URL = 'http://localhost:5000/gallery'
+
+    let api = await fetch(URL, {
+        method:'POST',
+        body:JSON.stringify({
+            "image": imgResult,
+            "style": style
+        }),
+        headers:{
+            'Content-Type':'application/json',
+        }
+    })
+
+    if(api.ok) {
+        alert('Saved image')
         return
     }
 
