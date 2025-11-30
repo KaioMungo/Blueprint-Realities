@@ -1,4 +1,3 @@
-// Exemplo de catálogo (pode vir da sua API futuramente)
 const catalog = {
     sofa: {
         title: "Sofá",
@@ -44,28 +43,23 @@ const catalog = {
     }
 };
 
-// Função chamada quando clica no hotspot
 function openItem(id) {
     const item = catalog[id];
     if (!item) return alert("Item não encontrado!");
 
-    // Preenchendo o modal
     document.getElementById("modal-img").src = item.img;
     document.getElementById("modal-title").innerText = item.title;
     document.getElementById("modal-desc").innerText = item.desc;
     document.getElementById("modal-price").innerText = "Preço: " + item.price;
     document.getElementById("modal-link").href = item.link;
 
-    // Mostrar modal
     document.getElementById("modal").classList.remove("hidden");
 }
 
-// Fechar modal
 function closeModal() {
     document.getElementById("modal").classList.add("hidden");
 }
 
-// Fechar clicando fora do modal
 document.addEventListener("click", (e) => {
     const modal = document.getElementById("modal");
     if (e.target === modal) {
