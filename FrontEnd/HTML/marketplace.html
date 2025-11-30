@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marketplace Clicável</title>
+    <link rel="stylesheet" href="../CSS/marketplace.css">
+</head>
+
+<body>
+    <header>
+        <a href="../index.html" class="btn_header">Home Page</a>
+        <a href="./gallery.html" class="btn_header">Image Gallery</a>
+        <a href="./prompt.html" class="btn_header">Generate Image</a>
+        <a href="./quiz.html" class="btn_header">Quiz</a>
+        <a href="./historic_cards.html" class="btn_header">Saved Cards</a>
+    </header>
+
+    <h1>Ambiente Gerado</h1>
+
+    <div id="room-container">
+        <!-- Troque pelo URL retornado pela IA -->
+        <img id="generated-room" src="../img/casa_after.png" alt="Room">
+
+        <!-- Hotspots que você pode posicionar dinamicamente -->
+        <div class="hotspot" style="top: 58%; left: 30%;" onclick="openItem('sofa')"></div>
+        <div class="hotspot" style="top: 63%; left: 49%;" onclick="openItem('mesa')"></div>
+        <div class="hotspot" style="top: 68%; left: 18%;" onclick="openItem('poltrona')"></div>
+        <div class="hotspot" style="top: 74%; left: 49%;" onclick="openItem('tapete')"></div>
+        <div class="hotspot" style="top: 35%; left: 49%;" onclick="openItem('lustre')"></div>
+        <div class="hotspot" style="top: 63%; left: 77%;" onclick="openItem('rack')"></div>
+    </div>
+
+    <!-- Modal -->
+    <div id="modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+
+            <img id="modal-img">
+            <h2 id="modal-title"></h2>
+            <p id="modal-desc"></p>
+            <p id="modal-price"></p>
+
+            <a id="modal-link" target="_blank" class="btn">Comprar</a>
+        </div>
+    </div>
+
+    <script src="../JS/marketplace.js"></script>
+</body>
+</html>
